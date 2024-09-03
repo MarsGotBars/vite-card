@@ -45,7 +45,7 @@ body {
   place-content: center;
   min-width: 320px;
   min-height: 100vh;
-  background: url("./bg-texture.png");
+  background: url("/bg-texture.png");
 
 }
 
