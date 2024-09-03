@@ -1,0 +1,8 @@
+main{
+    padding: 2rem;
+    background: #4a3f3f;
+}
+
+ul{
+    display: flex;
+}
