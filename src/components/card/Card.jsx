@@ -14,7 +14,7 @@ export default function Card() {
           <button aria-label="zie meer"></button>
         </div>
         <figure>
-          <img src="/ik.jpeg" alt="Marcin Magdziak" />
+          <img src="./ik.jpeg" alt="Marcin Magdziak" />
           <figcaption>
             <h1 className="slide">Marcin</h1>
           </figcaption>
