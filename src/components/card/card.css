@@ -1,8 +1,29 @@
 main{
-    padding: 2rem;
+    padding: var(--sm-spacing);
     background: #4a3f3f;
+    position: relative;
+    display: grid;
+    place-content: center;
+    gap: var(--lg-spacing);
+    align-items: end;
+    background: rgba(var(--text, 1));
+    /* image center? */
 }
 
-ul{
+header{
     display: flex;
+    gap: var(--lg-spacing);
+    align-items: end;
+}
+main > figure {
+    background: rgba(var(--secondary));
+    height: 320px;
+    width: 240px;
+    display: flex;
+    align-items: end;
+}
+
+figcaption{
+    margin-bottom: -9.6px;
+    margin-left: -3.25px;
 }

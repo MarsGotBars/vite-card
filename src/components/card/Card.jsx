@@ -1,21 +1,24 @@
-import React from 'react'
-import './card.css'
+import React from "react";
+import "./card.css";
 export default function Card() {
   return (
     <main>
-        <figure>
-            <figcaption></figcaption>
-        </figure>
-        <header>
-            <h1>card</h1>
-            <a href="">test</a>
-        </header>
-        <ul>
-            <li>text</li>
-            <li>asd</li>
-            <li>zxc</li>
-            <li>sads</li>
-        </ul>
+      <figure>
+        <figcaption>
+          {/* find image */}
+          <h1>Marcin</h1>
+        </figcaption>
+      </figure>
+      {/* <article>
+        <div>
+          <h2>Hobby's</h2>
+          <ul>
+            <li>Coding</li>
+            <li>Testing</li>
+            <li>extra</li>
+          </ul>
+        </div>
+      </article> */}
     </main>
-  )
+  );
 }
