@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./card.css";
+
 export default function Card() {
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleClass = () => {
+    setIsActive(!isActive);
+  };
   return (
     <main>
       <div className="container">
+        <div>
+          <button aria-label="zie meer"></button>
+        </div>
         <figure>
-          <figcaption className="content">
-            {/* find image */}
-            <h1>Marcin</h1>
+          <img src="/ik.jpeg" alt="Marcin Magdziak" />
+          <figcaption>
+            <h1 className="slide">Marcin</h1>
           </figcaption>
         </figure>
         <article className="content">
