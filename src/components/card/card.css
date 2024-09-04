@@ -45,6 +45,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: grayscale(0.7);
 }
 
 figcaption {
@@ -58,42 +59,54 @@ figcaption {
   z-index: 2;
 }
 
+figure:hover, figcaption:hover button, figure:hover button, figure:hover figcaption::after {
+  background: rgba(var(--text), 1);
+  color: rgba(var(--secondary), 1)
+}
+
+main:hover img {
+  filter: grayscale(0);
+}
+
 .container > div {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 0;
+  
   background: rgba(var(--primary), 1);
   height: 3vw;
   width: 3vw;
-  min-height: 40px;
-  min-width: 40px;
+  
   display: grid;
-  place-content: center;
   transform: translate(-0.625rem, var(--sm-spacing));
 }
 
 button {
-  height: 100%;
-  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+  border: none;
+  height: 3.3vw;
+  width: 3.3vw;
   background-color: rgba(var(--primary), 1);
 }
 
+button:hover{
+  background: rgba(var(--text), 1);
+}
 button::before{
   content: "";
-  padding: 5px;
+  aspect-ratio: 1;
+  width: .75em;
   display: inline-block;
   border: solid rgba(var(--text), 1);
-  border-width: 0 3px 3px 0;
+  border-width: 0 0.1875rem 0.1875rem 0;
   transition: ease 200ms;
-  transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+  transform: translateX(-0.1875rem) rotate(-45deg);
 }
 
 button:hover::before{
-  border-color: red;
+  border-color: rgba(var(--secondary));
 }
 
 h1 {

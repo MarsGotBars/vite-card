@@ -10,9 +10,7 @@ export default function Card() {
   return (
     <main>
       <div className="container">
-        <div>
-          <button aria-label="zie meer"></button>
-        </div>
+        <button aria-label="zie meer"></button>
         <figure>
           <img src="./ik.jpeg" alt="Marcin Magdziak" />
           <figcaption>
