@@ -10,16 +10,12 @@ main {
   z-index: 2;
 }
 
-main.fold {
-  overflow: visible;
-  width: 560px;
-}
-
 section {
-  padding: 1px 1px 1px 0.5px;
+  opacity: 0;
   height: 100%;
   width: 280px;
-  background: rgba(var(--primary), 1);
+  background: rgba(var(--primary), 0);
+  z-index: 10;
 }
 
 article {
@@ -27,11 +23,7 @@ article {
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: rgba(var(--bg-alt));
-}
-
-main.fold section {
-  transform: translate(280px, 0);
+  background: rgba(var(--bg-alt), 0.8);
 }
 
 h1 {
@@ -39,31 +31,9 @@ h1 {
   line-height: 0.9;
 }
 
-figure {
-  position: absolute;
-  width: 280px;
-  height: 100%;
-  background: rgba(var(--primary));
-  display: flex;
-  padding: 1px;
-  z-index: 2;
-}
-
 main:hover img,
 main.fold img {
   filter: grayscale(0);
-}
-
-main:hover figure {
-  padding: var(--sm-spacing);
-}
-
-main.fold:hover figure {
-  padding-right: calc(var(--sm-spacing) / 2);
-}
-
-main.fold figure {
-  padding-right: 0.5px;
 }
 
 main:hover figure,
@@ -73,17 +43,6 @@ main:hover figure figcaption {
   color: rgba(var(--primary), 1);
 }
 
-figure::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: transparent;
-  width: 100%;
-  height: 100%;
-  box-shadow: inset 0 0 0 0.625rem 0.625rem rgba(var(--primary), 1);
-}
-
 img {
   width: 100%;
   height: 100%;
@@ -91,39 +50,13 @@ img {
   filter: grayscale(0.8);
 }
 
-figcaption {
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background: rgba(var(--primary), 1);
-  color: rgba(var(--text, 1));
-  padding: var(--sm-spacing);
-  z-index: 2;
-}
-
 main:hover button::before {
   border-color: rgba(var(--primary), 1);
 }
 
-main:hover section {
-  padding: var(--sm-spacing) var(--sm-spacing) var(--sm-spacing)
-    calc(var(--sm-spacing) / 2);
-  background: rgba(var(--text), 1);
-}
-
-main > div {
-  background: rgba(var(--primary), 1);
-  height: 3vw;
-  width: 3vw;
-
-  display: grid;
-  transform: translate(-0.625rem, var(--sm-spacing));
-}
-
 button {
   position: absolute;
-  z-index: 3;
+  z-index: 11;
   top: 0;
   right: 0;
   aspect-ratio: 1;
@@ -142,13 +75,8 @@ button::before {
   display: inline-block;
   border: solid rgba(var(--text), 1);
   border-width: 0 0.1875rem 0.1875rem 0;
-  transition: ease 200ms;
   transform: translateX(-0.1875rem) rotate(-45deg);
-  transition: transform ease 200ms 200ms;
-}
-
-main.fold button::before {
-  transform: translateX(0.1875rem) rotate(135deg);
+  transition: transform 200ms 100ms;
 }
 
 main button:hover::before {
@@ -159,28 +87,81 @@ main button:hover {
   background: white;
 }
 
-main figure figcaption:hover {
-  color: rgba(var(--secondary), 1);
-  background: white;
-}
-
 article > div {
   font-size: 0.875rem;
   font-weight: 700;
   font-style: italic;
   display: flex;
+  justify-self: start;
   gap: 0.25rem;
   flex-shrink: 0;
-  margin: auto;
-}
-article div span{
-  flex-shrink: 0;
-  width: fit-content
+  border-bottom: 1px solid rgba(var(--primary), 1);
+  width: fit-content;
 }
 
+main:hover article div {
+  border-color: rgba(var(--text), 1);
+}
+
+article div span {
+  flex-shrink: 0;
+  width: fit-content;
+}
+
+@keyframes zindex {
+80%{ opacity: 1;}
+  90%{
+  opacity: 0;
+}
+100%{
+  z-index: 1;
+}
+}
 /* browser css */
 
 ::selection {
   background: rgba(var(--secondary));
   color: rgba(var(--bg));
+}
+main.fold section{
+  opacity: 1;
+  z-index: 10;
+}
+/* mobile view */
+@media screen and (min-width: 720px) {
+
+  article{
+    animation: zindex 300ms;
+
+    background: rgba(var(--bg-alt), 1);
+  }
+
+  section{
+  padding: 1px 1px 1px 0.5px;
+  background: rgba(var(--primary), 1);
+  }
+
+  section, section > *{
+    z-index: 1;
+    opacity: 1;
+  }
+  
+  main.fold {
+    overflow: visible;
+    width: 560px;
+  }
+
+  main.fold section {
+    transform: translate(280px, 0);
+  }
+
+  main.fold button::before {
+    transform: translateX(0.1875rem) rotate(135deg);
+  }
+  
+  main:hover section {
+    padding: var(--sm-spacing) var(--sm-spacing) var(--sm-spacing)
+      calc(var(--sm-spacing) / 2);
+    background: rgba(var(--text), 1);
+  }
 }

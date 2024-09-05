@@ -10,7 +10,7 @@ export default function Slider({ hobbies }) {
       });
     }, 3000);
     return () => clearInterval(intervalId);
-  }, [hobbies]);
+  }, [currentSlide]);
   return (
     <ul>
       {hobbies.map((hobby, i) => {
@@ -20,7 +20,6 @@ export default function Slider({ hobbies }) {
           </li>
         );
       })}
-      <li>{hobbies[0]}</li>
     </ul>
   );
 }

@@ -14,8 +14,25 @@ li {
 
 li.active{
     display: block;
+    animation: fade 3s infinite;
 }
 
 li:nth-child(odd) {
   color: rgba(var(--primary), 1);
+}
+
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  90%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+  
 }
