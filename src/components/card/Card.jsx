@@ -8,26 +8,24 @@ export default function Card() {
     setIsActive(!isActive);
   };
   return (
-    <main>
-      <div className="container">
-        <button aria-label="zie meer"></button>
-        <figure>
-          <img src="./ik.jpeg" alt="Marcin Magdziak" />
-          <figcaption>
-            <h1 className="slide">Marcin</h1>
-          </figcaption>
-        </figure>
+    <main className={isActive ? "fold" : ""}>
+      <button onClick={toggleClass} aria-label="zie meer"></button>
+      <figure>
+        <img src="./ik.jpeg" alt="Marcin Magdziak" />
+        <figcaption>
+          <h1 className="slide">Marcin</h1>
+        </figcaption>
+      </figure>
+      <section>
         <article className="content">
-          <div>
-            <h2>Hobbies</h2>
-            <ul>
-              <li>Coding</li>
-              <li>Testing</li>
-              <li>extra</li>
-            </ul>
-          </div>
+          <h2>About me</h2>
+          <ul>
+            <li>Coding</li>
+            <li>Testing</li>
+            <li>extra</li>
+          </ul>
         </article>
-      </div>
+      </section>
     </main>
   );
 }

@@ -1,33 +1,61 @@
 main {
   background: #4a3f3f;
   position: relative;
-  display: grid;
-  place-items: center;
+  display: flex;
   gap: var(--lg-spacing);
   align-items: end;
   height: 420px;
   width: 280px;
+  overflow: hidden;
+  z-index: 2;
 }
-
-.container {
-  position: relative;
+main.fold{
+  overflow:visible;
+  width: 560px;
+}
+article {
+  z-index: 1;
   width: 100%;
   height: 100%;
-  display: flex;
+  background: rgba(var(--bg-alt));
 }
 
-article {
-  width: 100%;
-  padding: var(--sm-spacing) var(--sm-spacing) var(--sm-spacing) 0;
+section{
+  padding: 1px 1px 1px .5px;
+  height: 100%;
+  width: 280px;
+  background: rgba(var(--primary), 1);
+}
+
+main.fold section{
+  transform: translate(280px, 0);
+}
+ section article{
+  height: 100%;
 }
 
 figure {
   position: absolute;
-  width: 100%;
+  width: 280px;
   height: 100%;
   background: rgba(var(--primary));
   display: flex;
+  padding: 1px;
+  z-index: 2;
+}
+
+main:hover figure{
   padding: var(--sm-spacing);
+}
+main.fold:hover figure{
+  padding-right: calc(var(--sm-spacing)/2);
+}
+main.fold figure{
+  padding-right: .5px;
+}
+main:hover figure, main:hover button, button:hover ~ figure > figcaption, figure:hover, figure:hover ~ button, button:hover figure, figure:hover figcaption{
+  background:rgba(var(--text), 1);
+  color: rgba(var(--primary), 1);
 }
 
 figure::after {
@@ -59,16 +87,20 @@ figcaption {
   z-index: 2;
 }
 
-figure:hover, figcaption:hover button, figure:hover button, figure:hover figcaption::after {
+main:hover button::before{
+  border-color: rgba(var(--primary), 1);
+}
+
+main:hover section{
+  padding: var(--sm-spacing) var(--sm-spacing) var(--sm-spacing) calc(var(--sm-spacing)/2);
   background: rgba(var(--text), 1);
-  color: rgba(var(--secondary), 1)
 }
 
 main:hover img {
   filter: grayscale(0);
 }
 
-.container > div {
+main > div {
   
   background: rgba(var(--primary), 1);
   height: 3vw;
@@ -80,7 +112,7 @@ main:hover img {
 
 button {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   right: 0;
   min-height: 2.5rem;
@@ -91,9 +123,6 @@ button {
   background-color: rgba(var(--primary), 1);
 }
 
-button:hover{
-  background: rgba(var(--text), 1);
-}
 button::before{
   content: "";
   aspect-ratio: 1;
@@ -105,16 +134,24 @@ button::before{
   transform: translateX(-0.1875rem) rotate(-45deg);
 }
 
-button:hover::before{
+main button:hover::before{
   border-color: rgba(var(--secondary));
 }
 
+main button:hover {
+  background: white;
+}
 h1 {
   font-size: clamp(1.5rem, 4vw, 3rem);
   line-height: 0.9;
 }
 
+main figure figcaption:hover{
+  color: rgba(var(--secondary), 1);
+  background: white;
+}
+
 ::selection {
-  background: rgba(var(--text));
+  background: rgba(var(--secondary));
   color: rgba(var(--bg));
 }
