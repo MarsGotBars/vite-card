@@ -17,7 +17,7 @@ section {
   background: rgba(var(--primary), 0);
   z-index: 10;
 }
-main.fold:hover section{
+main.fold:hover section {
   padding: var(--sm-spacing);
 }
 article {
@@ -34,7 +34,7 @@ article {
 
 article p {
   font-family: var(--font-alt);
-  font-size: clamp(.5rem, 2.5vw ,0.875rem);
+  font-size: clamp(0.5rem, 2.5vw, 0.875rem);
   height: 100%;
   width: 100%;
 }
@@ -134,23 +134,31 @@ article > div.wrapper > ul {
   margin: auto 0 0 0;
 }
 
-a{
- display: inline-block;
- width: fit-content;
- text-decoration: underline;
+a:not(.icon) {
+  background: linear-gradient(to right, transparent, transparent),
+    linear-gradient(to right, rgba(var(--primary), 1), rgba(var(--primary), 1));
+  background-size: 100% 2px, 0 2px;
+  background-position: 100% 100%, 0% 100%;
+  background-repeat: no-repeat;
 }
 
-a:hover{
-  color: rgba(var(--primary), 1);
+a {
+  display: inline-block;
+  width: fit-content;
 }
 
-article > div.wrapper > ul li.link{
+a:hover {
+  background-size: 0 2px, 100% 2px;
+  color: white;
+}
+
+article > div.wrapper > ul li.link {
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 
-article > div.wrapper > ul::after{
+article > div.wrapper > ul::after {
   content: "";
   display: block;
   background: rgba(var(--primary), 1);
@@ -168,21 +176,23 @@ article div span {
 }
 
 @keyframes zindex {
-80%{ opacity: 1;}
-  90%{
-  opacity: 0;
-}
-100%{
-  z-index: 1;
-}
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    z-index: 1;
+  }
 }
 
-main.fold section{
+main.fold section {
   opacity: 1;
   z-index: 10;
 }
 
-article div div:not(:first-of-type)::before{
+article div div:not(:first-of-type)::before {
   content: "";
   position: absolute;
   left: 0;
@@ -192,11 +202,11 @@ article div div:not(:first-of-type)::before{
   background: red;
 }
 
-article div:not(:first-of-type) svg{
+article div:not(:first-of-type) svg {
   width: 1.75rem;
   fill: var(--icon-alt);
 }
-article div:not(:first-of-type) svg:hover{
+article div:not(:first-of-type) svg:hover {
   width: 1.75rem;
   fill: var(--icon);
 }
@@ -209,26 +219,26 @@ article div:not(:first-of-type) svg:hover{
 
 /* mobile view */
 @media screen and (min-width: 720px) {
-
-  article{
+  article {
     animation: none;
     background: rgba(var(--bg-alt), 1);
   }
 
-  section{
-  padding: 1px 1px 1px 0.5px;
-  background: rgba(var(--primary), 1);
+  section {
+    padding: 1px 1px 1px 0.5px;
+    background: rgba(var(--primary), 1);
   }
-  main.fold section{
+  main.fold section {
     opacity: 1;
     z-index: 1;
   }
 
-  section, section > *{
+  section,
+  section > * {
     z-index: 1;
     opacity: 1;
   }
-  
+
   main.fold {
     overflow: visible;
     width: 560px;
@@ -241,7 +251,7 @@ article div:not(:first-of-type) svg:hover{
   main.fold button::before {
     transform: translateX(0.1875rem) rotate(135deg);
   }
-  
+
   main:hover section {
     padding: var(--sm-spacing) var(--sm-spacing) var(--sm-spacing)
       calc(var(--sm-spacing) / 2);

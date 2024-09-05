@@ -35,6 +35,7 @@
 a {
   font-weight: 500;
   color: rgba(var(--secondary));
+  text-decoration: none;
 }
 
 body {

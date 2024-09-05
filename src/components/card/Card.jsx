@@ -38,12 +38,12 @@ export default function Card() {
             </p>
             <ul>
               <li className="link">
-                <a href="https://github.com/MarsGotBars">
+                <a className="icon" href="https://github.com/MarsGotBars">
                   <Git />
                 </a>
               </li>
               <li className="link">
-                <a href="https://www.linkedin.com/in/marcin-magdziak-664847223/">
+                <a className="icon" href="https://www.linkedin.com/in/marcin-magdziak-664847223/">
                   <LinkedIn />
                 </a>
               </li>
