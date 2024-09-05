@@ -1,0 +1,21 @@
+ul {
+  display: flex;
+  gap: 1rem;
+  transition: width 300ms ease;
+}
+
+li {
+  display: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: fit-content;
+  color: rgba(var(--secondary), 1);
+}
+
+li.active{
+    display: block;
+}
+
+li:nth-child(odd) {
+  color: rgba(var(--primary), 1);
+}

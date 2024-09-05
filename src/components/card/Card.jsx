@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import Slider from "../slider/Slider";
 import "./card.css";
 
 export default function Card() {
   const [isActive, setIsActive] = useState(false);
-
+  const hobbies = ["Coding", "Building pc's", "Swimming", "Helping", "Inspiring", "Innovating", "Trying out new stuff"]
   const toggleClass = () => {
     setIsActive(!isActive);
   };
@@ -19,11 +20,11 @@ export default function Card() {
       <section>
         <article className="content">
           <h2>About me</h2>
-          <ul>
-            <li>Coding</li>
-            <li>Testing</li>
-            <li>extra</li>
-          </ul>
+          <div>
+            <span>I love</span>
+            <Slider hobbies={hobbies}/>
+          </div>
+          <p></p>
         </article>
       </section>
     </main>
