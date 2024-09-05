@@ -5,6 +5,7 @@ ul {
 }
 
 li {
+  transform: translateX(5px);
   display: none;
   white-space: nowrap;
   flex-shrink: 0;
@@ -25,14 +26,17 @@ li:nth-child(odd) {
   0%{
     opacity: 0;
   }
-  10%{
+  5%{
     opacity: 1;
+    transform: translateX(0);
   }
-  90%{
+  95%{
     opacity: 1;
+    transform: translateX(0);
   }
   100%{
     opacity: 0;
+    transform: translateX(-5px);
   }
   
 }

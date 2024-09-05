@@ -21,12 +21,18 @@ main.fold:hover section{
   padding: var(--sm-spacing);
 }
 article {
+  display: flex;
+  flex-direction: column;
   padding: var(--sm-spacing);
   z-index: 1;
   width: 100%;
   height: 100%;
   background: rgba(var(--bg-alt), 0.8);
   animation: zindex 300ms;
+}
+
+article p {
+  height: 100%;
 }
 
 h1 {
@@ -44,6 +50,11 @@ main:hover button,
 main:hover figure figcaption {
   background: rgba(var(--text), 1);
   color: rgba(var(--primary), 1);
+}
+
+main figure figcaption:hover {
+  color: rgba(var(--secondary), 1);
+  background: white;
 }
 
 img {
@@ -92,7 +103,7 @@ main button:hover {
   background: white;
 }
 
-article > div {
+article > div:first-of-type {
   font-size: 0.875rem;
   font-weight: 700;
   font-style: italic;
@@ -122,16 +133,22 @@ article div span {
   z-index: 1;
 }
 }
+
+main.fold section{
+  opacity: 1;
+  z-index: 10;
+}
+article div:not(:first-of-type) img{
+  width: 2rem;
+  aspect-ratio: 1;
+}
 /* browser css */
 
 ::selection {
   background: rgba(var(--secondary));
   color: rgba(var(--bg));
 }
-main.fold section{
-  opacity: 1;
-  z-index: 10;
-}
+
 /* mobile view */
 @media screen and (min-width: 720px) {
 

@@ -28,6 +28,12 @@ export default function Card() {
             <Slider hobbies={hobbies} />
           </div>
           <p></p>
+          <div className="socials">
+            <a href="">
+              <img src="./git.svg" alt="" />
+            </a>
+            {/* <a href=""></a> */}
+          </div>
         </article>
       </section>
     </main>
