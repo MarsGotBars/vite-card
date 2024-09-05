@@ -1,10 +1,10 @@
-ul {
+ul.slider {
   display: flex;
   gap: 1rem;
   transition: width 300ms ease;
 }
 
-li {
+li.item {
   transform: translateX(5px);
   display: none;
   white-space: nowrap;

@@ -23,6 +23,7 @@ main.fold:hover section{
 article {
   display: flex;
   flex-direction: column;
+  gap: var(--sm-spacing);
   padding: var(--sm-spacing);
   z-index: 1;
   width: 100%;
@@ -32,7 +33,10 @@ article {
 }
 
 article p {
+  font-family: var(--font-alt);
+  font-size: clamp(.5rem, 2.5vw ,0.875rem);
   height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -115,6 +119,45 @@ article > div:first-of-type {
   width: fit-content;
 }
 
+article > div.wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  gap: var(--sm-spacing);
+}
+article > div.wrapper > ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  gap: var(--md-spacing);
+  margin: auto 0 0 0;
+}
+
+a{
+ display: inline-block;
+ width: fit-content;
+ text-decoration: underline;
+}
+
+a:hover{
+  color: rgba(var(--primary), 1);
+}
+
+article > div.wrapper > ul li.link{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+article > div.wrapper > ul::after{
+  content: "";
+  display: block;
+  background: rgba(var(--primary), 1);
+  height: 3rem;
+  width: 1px;
+}
+
 main:hover article div {
   border-color: rgba(var(--text), 1);
 }
@@ -138,9 +181,24 @@ main.fold section{
   opacity: 1;
   z-index: 10;
 }
-article div:not(:first-of-type) img{
-  width: 2rem;
-  aspect-ratio: 1;
+
+article div div:not(:first-of-type)::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
+article div:not(:first-of-type) svg{
+  width: 1.75rem;
+  fill: var(--icon-alt);
+}
+article div:not(:first-of-type) svg:hover{
+  width: 1.75rem;
+  fill: var(--icon);
 }
 /* browser css */
 

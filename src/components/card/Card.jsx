@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Slider from "../slider/Slider";
 import Profile from "../profile/Profile";
 import "./card.css";
+import Git from "../svg/Git";
+import LinkedIn from "../svg/LinkedIn";
 
 export default function Card() {
   const [isActive, setIsActive] = useState(false);
@@ -27,12 +29,25 @@ export default function Card() {
             <span>I love</span>
             <Slider hobbies={hobbies} />
           </div>
-          <p></p>
-          <div className="socials">
-            <a href="">
-              <img src="./git.svg" alt="" />
-            </a>
-            {/* <a href=""></a> */}
+          <div className="wrapper">
+            <p>
+              Welkom op mijn kaartje! <br />
+              Mijn naam is Marcin Magdziak. Ik kom uit Polen en woon momenteel in Rotterdam. <br /><br /> 
+              Voor deze opleiding studeerde ik Software development op het <br /> <a href="https://www.glr.nl/">Grafisch Lyceum Rotterdam</a> <br /> <br />
+              Bekijk anders ook nog even mijn <a href="https://portfolio-marcin.netlify.app/">portfolio</a>!
+            </p>
+            <ul>
+              <li className="link">
+                <a href="https://github.com/MarsGotBars">
+                  <Git />
+                </a>
+              </li>
+              <li className="link">
+                <a href="https://www.linkedin.com/in/marcin-magdziak-664847223/">
+                  <LinkedIn />
+                </a>
+              </li>
+            </ul>
           </div>
         </article>
       </section>

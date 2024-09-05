@@ -12,10 +12,13 @@ export default function Slider({ hobbies }) {
     return () => clearInterval(intervalId);
   }, [currentSlide]);
   return (
-    <ul>
+    <ul className="slider">
       {hobbies.map((hobby, i) => {
         return (
-          <li key={i} className={i === currentSlide ? "active" : ""}>
+          <li
+            key={i}
+            className={`item ${i === currentSlide ? "active" : ""}`}
+          >
             {hobby}
           </li>
         );
