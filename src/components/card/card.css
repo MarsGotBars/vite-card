@@ -60,11 +60,11 @@ button {
   top: 0;
   right: 0;
   aspect-ratio: 1;
-  min-height: 2.5rem;
-  min-width: 2.5rem;
+  min-height: 3rem;
+  min-width: 3rem;
   border: none;
-  height: 3.5vw;
-  width: 3.5vw;
+  height: 3.3vw;
+  width: 3.3vw;
   background-color: rgba(var(--primary), 1);
 }
 
