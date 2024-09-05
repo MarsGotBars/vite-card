@@ -21,6 +21,7 @@ main.fold:hover section {
   padding: var(--sm-spacing);
 }
 article {
+  user-select: none;
   display: flex;
   flex-direction: column;
   gap: var(--sm-spacing);
@@ -71,7 +72,9 @@ img {
 main:hover button::before {
   border-color: rgba(var(--primary), 1);
 }
-
+main:hover button::after {
+  border-color: rgba(var(--primary), 1);
+}
 button {
   position: absolute;
   z-index: 11;
@@ -95,11 +98,36 @@ button::before {
   display: inline-block;
   border: solid rgba(var(--text), 1);
   border-width: 0 0.1875rem 0.1875rem 0;
-  transform: translateX(-0.1875rem) rotate(-45deg);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-0.625rem, -0.625rem);
   transition: transform 200ms 100ms;
 }
 
-main button:hover::before {
+button::after {
+  content: "";
+  aspect-ratio: 1;
+  width: 0.75em;
+  display: inline-block;
+  border: solid rgba(var(--text), 1);
+  border-width: 0 0.1875rem 0.1875rem 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0.625rem, 0.625rem) rotate(-180deg);
+}
+button::before, button::after{
+  transition: transform 300ms 100ms;
+}
+main.fold button::before{
+  transform: translate(-1.5rem, -1.5rem) rotate(-360deg);
+}
+main.fold button::after{
+  transform: translate(1.5rem, 1.5rem) rotate(-540deg);
+}
+
+main button:hover::before, main button:hover::after {
   border-color: rgba(var(--secondary));
 }
 
@@ -143,6 +171,7 @@ a:not(.icon) {
 }
 
 a {
+  pointer-events: none;
   display: inline-block;
   width: fit-content;
 }
@@ -152,6 +181,9 @@ a:hover {
   color: white;
 }
 
+main.fold a{
+ pointer-events: auto;
+}
 article > div.wrapper > ul li.link {
   align-items: center;
   display: flex;
@@ -216,9 +248,27 @@ article div:not(:first-of-type) svg:hover {
   background: rgba(var(--secondary));
   color: rgba(var(--bg));
 }
-
+main.fold article p {
+  user-select:text;
+}
 /* mobile view */
 @media screen and (min-width: 720px) {
+  
+  button::after{
+    display: none;
+  }
+  button::before {
+    position: relative;
+    content: "";
+    aspect-ratio: 1;
+    width: 0.75em;
+    display: inline-block;
+    border: solid rgba(var(--text), 1);
+    border-width: 0 0.1875rem 0.1875rem 0;
+    transform: translate(-0.1875rem, 0) rotate(-45deg);
+    transition: transform 200ms 100ms;
+  }
+
   article {
     animation: none;
     background: rgba(var(--bg-alt), 1);
