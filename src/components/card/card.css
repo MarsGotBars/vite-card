@@ -248,7 +248,7 @@ article div:not(:first-of-type) svg:hover {
   background: rgba(var(--secondary));
   color: rgba(var(--bg));
 }
-main.fold article p {
+main.fold article {
   user-select:text;
 }
 /* mobile view */
