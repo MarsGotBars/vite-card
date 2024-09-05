@@ -62,9 +62,11 @@ button {
   aspect-ratio: 1;
   min-height: 3rem;
   min-width: 3rem;
+  max-width: 4rem;
+  max-height: 4rem;
   border: none;
-  height: 3.3vw;
-  width: 3.3vw;
+  height: 3vw;
+  width: 3vw;
   background-color: rgba(var(--primary), 1);
 }
 
