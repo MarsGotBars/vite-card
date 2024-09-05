@@ -33,7 +33,7 @@ export default function Card() {
             <p>
               Welkom op mijn kaartje! <br />
               Mijn naam is Marcin Magdziak. Ik kom uit Polen en woon momenteel in Rotterdam. <br /><br /> 
-              Voor deze opleiding studeerde ik Software development op het <br /> <a href="https://www.glr.nl/">Grafisch Lyceum Rotterdam</a> <br /> <br />
+              Voor deze opleiding studeerde ik Software development aan het <br /> <a href="https://www.glr.nl/">Grafisch Lyceum Rotterdam</a> <br /> <br />
               Bekijk anders ook nog even mijn <a href="https://portfolio-marcin.netlify.app/">portfolio</a>!
             </p>
             <ul>
